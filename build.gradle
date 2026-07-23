@@ -176,6 +176,7 @@ repositories {
     }
 
 
+
 }
 
 dependencies {
@@ -204,8 +205,8 @@ dependencies {
     annotationProcessor "org.spongepowered:mixin:${mixin_version}:processor"
     implementation "com.google.code.gson:gson:${gson_version}"
     //Irons spellbooks
-    compileOnly fg.deobf("io.redspace.ironsspellbooks:irons_spellbooks:1.20.1-${irons_spells_version}")
-    runtimeOnly fg.deobf("io.redspace.ironsspellbooks:irons_spellbooks:1.20.1-${irons_spells_version}")
+    compileOnly fg.deobf("io.redspace:irons_spellbooks:1.20.1-${irons_spells_version}")
+    runtimeOnly fg.deobf("io.redspace:irons_spellbooks:1.20.1-${irons_spells_version}")
     // fg.deobf("curse.maven:irons-spells-n-spellbooks-855414:7402504")
     //CAELUS API
     implementation  fg.deobf("top.theillusivec4.caelus:caelus-forge:3.1.0+1.20")
@@ -224,7 +225,17 @@ dependencies {
     implementation(jarJar("io.github.llamalad7:mixinextras-forge:0.4.1")) {
         jarJar.ranged(it, "[0.4.1,)")
     }
+    //Origins
+    implementation fg.deobf("curse.maven:origins-forge-474438:5314209")
+
+    // MCA REBORN
+    implementation fg.deobf("curse.maven:minecraft-comes-alive-reborn-535291:7132253")
+
+    implementation fg.deobf("curse.maven:architectury-api-419699:5137938")
+
+
 }
+
 
 // This block of code expands all declared replace properties in the specified resource targets.
 // A missing property will result in an error. Properties are expanded using ${} Groovy notation.

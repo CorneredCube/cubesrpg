@@ -21,6 +21,7 @@ public class ModCreativeModeTabs {
                         output.accept(modItems.copper_scythe.get());
                         output.accept(modBlocks.blahaj_block.get());
                         output.accept(modBlocks.blahaj_cooked_block.get());
+                        output.accept(modItems.boykisser_plushie_item.get());
                     })
                     .build());
 

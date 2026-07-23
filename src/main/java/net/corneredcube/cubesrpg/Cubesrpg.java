@@ -2,10 +2,14 @@ package net.corneredcube.cubesrpg;
 
 import com.mojang.logging.LogUtils;
 import net.corneredcube.cubesrpg.block.modBlocks;
+import net.corneredcube.cubesrpg.dialog.DialogScreen;
+import net.corneredcube.cubesrpg.entity.ModEntities;
 import net.corneredcube.cubesrpg.item.ModCreativeModeTabs;
 import net.corneredcube.cubesrpg.item.modItems;
+import net.corneredcube.cubesrpg.menu.CubesMenus;
 import net.corneredcube.cubesrpg.sound.ModSounds;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
@@ -32,6 +36,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
+import software.bernie.geckolib.GeckoLib;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Cubesrpg.MODID)
@@ -50,12 +55,13 @@ public class Cubesrpg {
 
     public Cubesrpg() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
+        GeckoLib.initialize();
         ModCreativeModeTabs.register(modEventBus);
 
         modItems.register(modEventBus);
         modBlocks.register(modEventBus);
         ModSounds.register(modEventBus);
+        ModEntities.register(modEventBus);
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -68,7 +74,7 @@ public class Cubesrpg {
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
-
+        CubesMenus.Menus.register(modEventBus);
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
@@ -108,6 +114,9 @@ public class Cubesrpg {
         public static void onClientSetup(FMLClientSetupEvent event) {
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
+            event.enqueueWork(() -> {
+                MenuScreens.register(CubesMenus.Dialog_Menu.get(), DialogScreen::new);
+            });
         }
     }
 }

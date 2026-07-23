@@ -1,0 +1,43 @@
+{
+  "blank": [
+    " "
+  ],
+  "greeting": [
+    "Hello Adventurer!",
+    "Welcome to the village.",
+    "sup faggot"
+  ],
+  "chatTransition": [
+    "What would you like to chat about?",
+    "You want to tell me something?",
+    "Not just here to say hi are we?",
+    "Oh I've been meaning to talk with you! What do you want to talk about?",
+    "I've been dying to chat with someone!",
+    "Oh, I guess we could talk. What about?",
+    "Need something?",
+    "Whats up fag-slice? Got some juicy deets for me?"
+  ],
+  "interactTransition": [
+    "What would you like to do?",
+    "Why are you staring at me like that?",
+    "If you keep staring at me like that I'll scream.",
+    "Man you have big eyes.",
+    "Is there something on my face?",
+    "You have a staring problem or something?",
+    "Didn't your parents teach you its rude to stare?",
+    "Is my nose super big or something?",
+    "You seem lost in thought.",
+    "You should probably choose one of those buttons before I explode.",
+    "Did you know that I kill people who look me in the eyes for too long? Just kidding, haha. Probably.",
+    "Did you know you have a pimple right there? Haha just kidding, but seriously you should brush your teeth.",
+    "Are you expecting me to say something?"
+
+  ],
+  "ending": [
+    "Goodbye",
+    "leave me alone!",
+    "Go away faggot.",
+    "See ya~!",
+    "May the stars bid you farewell."
+  ]
+}

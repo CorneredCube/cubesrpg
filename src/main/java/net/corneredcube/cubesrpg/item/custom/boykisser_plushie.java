@@ -27,7 +27,7 @@ public class boykisser_plushie extends Item {
 
     @Override
     public InteractionResult useOn(UseOnContext context) {
-        int radius = 50;
+        int radius = 10;
         Level level = context.getLevel();
         if(!level.isClientSide()){
             double radiusSq = radius * radius;
@@ -57,12 +57,12 @@ public class boykisser_plushie extends Item {
                             pos.getX(), pos.getY(), pos.getZ(),
                             ModSounds.plushie_squeak.get(),
                             SoundSource.BLOCKS,
-                            1.0f,
-                            1.0f,
-                            0
+                            2.0f,
+                            2.0f,
+                            1
                     );
                 }
-                break;
+
             }
         }
         return InteractionResult.SUCCESS;
